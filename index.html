@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="css/theme.css" rel="stylesheet">
+
+    <title>ViewWings - Home</title>
+</head>
+
+<body>
+    <header class="main-naviation">
+        <div class="top-panel">
+            <div class="nav-ctr ctr">
+                <div class="left">
+                    <ul class="top-l-nav">
+                        <li><a href="#"><span class="strong">Call:</span> 1800-000-000</a></li>
+                        <li><a href="#"><span class="strong">Email:</span> info@test.com</a></li>
+                    </ul>
+                </div>
+                <div class="right">
+                    <ul class="top-r-nav">
+                        <li><a href="#">Nav Button</a></li>
+                        <li><a href="#">Nav Button</a></li>
+                        <li><a href="#">Nav Button</a></li>
+                    </ul>
+                </div>
+                <button class="toggle dot-toggle toggleTopbar">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+        <nav class="site-navbar">
+            <div class="nav-ctr ctr">
+                <div class="site-logo">
+                    <a href="#">View<span>Wings</span></a>
+                </div>
+                <ul class="primary-menu primaryMenu">
+                    <button class="toggle togglePrimary mobile-close-nav togglePrimary active">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <li><a href="#">Home</a></li>
+                    <li class="menu-item-has-children mega-menu">
+                        <a href="#">mega Menu</a>
+                        <ul class="sub-menu">
+                            <li><a href="#">Drop Menu 1</a></li>
+                            <li><a href="#">Drop Menu 2</a></li>
+                            <li><a href="#">Drop Menu 3</a></li>
+                            <li><a href="#">Drop Menu 3</a></li>
+                            <li><a href="#">Drop Menu 3</a></li>
+                            <li><a href="#">Drop Menu 3</a></li>
+                            <li><a href="#">Drop Menu 3</a></li>
+                            <li><a href="#">Drop Menu 3</a></li>
+                            <li><a href="#">Drop Menu 3</a></li>
+                            <li><a href="#">Drop Menu 3</a></li>
+                            <li><a href="#">Drop Menu 3</a></li>
+                            <li><a href="#">Drop Menu 3</a></li>
+                            <li><a href="#">Drop Menu 3</a></li>
+                            <li><a href="#">Drop Menu 3</a></li>
+                            <li><a href="#">Drop Menu 3</a></li>
+                            <li><a href="#">Drop Menu 3</a></li>
+                            <li class="menu-item-has-children">
+                                <a href="#">More Items</a>
+                                <ul class="sub-menu">
+                                    <li><a href="#">Sub Menu 1</a></li>
+                                    <li><a href="#">Sub Menu 2</a></li>
+                                    <li><a href="#">Sub Menu 3</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a href="#">Single menu</a>
+                        <ul class="sub-menu">
+                            <li><a href="#">Drop Menu 1</a></li>
+                            <li><a href="#">Drop Menu 2</a></li>
+                            <li><a href="#">Drop Menu 3</a></li>
+                            <li class="menu-item-has-children">
+                                <a href="#">More Items</a>
+                                <ul class="sub-menu">
+                                    <li><a href="#">Sub Menu 1</a></li>
+                                    <li><a href="#">Sub Menu 2</a></li>
+                                    <li><a href="#">Sub Menu 3</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children two-col">
+                        <a href="#">Two columns</a>
+                        <ul class="sub-menu">
+                            <li><a href="#">Drop Menu 1</a></li>
+                            <li><a href="#">Drop Menu 2</a></li>
+                            <li><a href="#">Drop Menu 3</a></li>
+                            <li><a href="#">Drop Menu 4</a></li>
+                            <li><a href="#">Drop Menu 4</a></li>
+                            <li><a href="#">Drop Menu 4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Feedback</a></li>
+                </ul>
+                <a href="#" class="search searchToggle">
+                    <span class="v-icon vi-search">d</span>
+                </a>
+                <button class="toggle togglePrimary">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+
+        </nav>
+    </header>
+    <div class="search-outer searchToggle">
+        <div class="close-search">
+            <span class="v-icon vi-search">d</span>
+        </div>
+        <div class="search-form">
+            <form action="#">
+                <label for="">test</label>
+                <input type="text" placeholder="Search..." required>
+                <input type="submit"></input>
+            </form>
+        </div>
+    </div>
+    <div class="ctr">
+        132
+        <address>dfg</address>
+        <div class="row">
+            <div class="col-md-6">12154</div>
+            <div class="col-md-6">12154</div>
+        </div>
+    </div>
+
+    <!-- script area -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(".searchToggle").click(function () {
+            $(".search-outer").toggleClass("active");
+        })
+        $(".search-form").click(function (e) {
+            e.stopPropagation();
+        });
+        $(".togglePrimary").click(function () {
+            $(".primaryMenu").toggleClass("active");
+        });
+        $(".toggleTopbar").click(function () {
+            $(".top-r-nav").toggleClass("active")
+            $(this).toggleClass('dot-toggle');
+            $(this).toggleClass('active');
+        })
+    </script>
+</body>
+
+</html>
