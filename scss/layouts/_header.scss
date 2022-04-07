@@ -1,23 +1,20 @@
 
-$primary: #06536B;
-$link-color: #021835;
-$link-color-hover: $primary;
+
 $light-color: #eee;
-$footer-bg: #282828;
-$footer-color: rgba(255, 255, 255, 0.75);
 .main-naviation {
-    font-family: "Encode Sans", sans-serif;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1000;
     li {
         list-style: none;
     }
     a {
         text-decoration: none;
-        color: $link-color;
+        color: var(--dark-color);
         transition: all ease 0.3s;
         display: block;
         &:hover {
-            color: $link-color-hover;
+            color: var(--brand-color) ;
             transition: all ease 0.3s;
         }
     }
@@ -67,7 +64,7 @@ $footer-color: rgba(255, 255, 255, 0.75);
         span {
             height: 2px;
             width: 80%;
-            background: $primary;
+            background: var(--brand-color);
             display: block;
             position: absolute;
             right: 0;
@@ -107,7 +104,7 @@ $footer-color: rgba(255, 255, 255, 0.75);
                 width: 5px;
                 height: 5px;
                 border-radius: 5px;
-                background: $link-color;
+                background: var(--dark-color);
             }
         }
     }
@@ -140,17 +137,16 @@ $footer-color: rgba(255, 255, 255, 0.75);
         position: absolute;
         background: #fff;
         top: calc(100% + 20px);
+        border-radius: var(--border-radius);
         // max-width: 100%;
         // right 0 change on big screen
         right: 0;
         box-shadow: 0 13px 42px 11px rgba(0, 0, 0, 0.05);
         padding: 15px 0;
-        border-top: 2px solid $primary;
+        border-top: 2px solid var(--brand-color);
         a {
             padding: 15px 35px;
             &::after {
-                top: 15px !important;
-                right: 15px !important;
                 transform: rotate(-90deg);
             }
         }
@@ -166,16 +162,18 @@ $footer-color: rgba(255, 255, 255, 0.75);
         > a {
             position: relative;
             &::after {
-                content: "\f0d7";
-                height: 20px;
-                width: 20px;
+                content: "";
+                height: 16px;
+                width: 16px;
+                background: url(../images/chevron-down.svg) no-repeat center center;
+                background-size: contain;
                 display: inline-flex;
                 align-items: center;
                 justify-content: center;
-                top: 28px;
+                top: -5px;
                 right: 0;
-                position: absolute;
-                font-family: "Font Awesome 5 Free";
+                position: relative;
+                margin-left: 5px;
             }
         }
         &:hover > .sub-menu {
@@ -216,7 +214,7 @@ $footer-color: rgba(255, 255, 255, 0.75);
                 flex-shrink: 50%;
                 max-width: 20%;
                 width: 100%;
-                &:nth-child(1n + 1) {
+                &:not(:nth-child(5n)) {
                     border-right: 1px solid #eee;
                 }
             }
@@ -235,11 +233,11 @@ $footer-color: rgba(255, 255, 255, 0.75);
             margin-left: auto;
             margin-right: 25px;
             font-size: 20px;
-            color: $primary;
+            color: var(--brand-color);
         }
         a{
             
-            color: $link-color !important;
+            color: var(--dark-color) !important;
         }
         .top-r-nav {
             display: none;
@@ -300,7 +298,7 @@ $footer-color: rgba(255, 255, 255, 0.75);
             justify-content: center;
             font-size: 20px;
             z-index: 3;
-            color: $primary;
+            color: var(--brand-color);
         }
         .sub-menu {
             display: none !important;
@@ -326,7 +324,6 @@ $footer-color: rgba(255, 255, 255, 0.75);
         .menu-item-has-children {
             a {
                 &::after {
-                    right: 25px;
                     font-size: 16px;
                 }
             }
@@ -435,26 +432,3 @@ $footer-color: rgba(255, 255, 255, 0.75);
     }
 }
 
-.center-logo{
-    .site-navbar .nav-ctr{
-        flex-direction: column;
-    }
-    .primary-menu{
-        margin-left: initial;
-    }
-    .search {
-        display: none;
-    }
-    .site-logo{
-        padding-top: 30px;
-    }
-
-    @include down-lg{
-        .site-navbar .nav-ctr{
-            flex-direction: row;
-        }  
-        .site-logo{
-            padding-top: 0px;
-        }
-    }
-}
