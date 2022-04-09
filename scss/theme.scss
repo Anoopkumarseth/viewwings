@@ -252,6 +252,23 @@ img{
     }
 }
 
+.section-bg{
+    position: relative;
+    &::before{
+        content: '';
+        height: 100%;
+        width: 100%;
+        background: #FAFAFA;
+        filter: blur(100px);
+        display: block;
+        top: 0;
+        position: absolute;
+    }
+    .ctr{
+        position: relative;
+    }
+}
+
 // overlay
 .text-overlay{
     background-position: center center;
@@ -308,14 +325,28 @@ img{
     }
 }
 
-.services {
-    
-}
-
 .city-punch{
     background-image: url('../images/delhi-city.jpg');
     background-attachment: fixed;
 }
+
+.choose-us{
+    .card{
+        display: flex;
+        padding: 30px;
+        border: 0;
+        background: var(--light-color);
+    }
+    .card-img{
+        max-width: 40px;
+        flex: 0 0 40px;
+        height: 100%;
+    }
+    .card-body{
+        padding: 0 0 0 30px;
+    }
+}
+
 
 @include down-lg {
     .page-hero {
