@@ -6,7 +6,9 @@
     --font-family: "Manrope", sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial,
         "Noto Sans", "Liberation Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --border-radius: 10px;
-    --box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    --box-shadow: 0px 4px 80px rgba(0, 0, 0, 0.1);
+    --light-border:1px solid rgba(0, 0, 0, 0.05);
+    --overlay:rgba(0, 0, 0, 0.7);
     --lead-size: 1.8rem;
     --content-size: 1.125rem;
     --h1-size: 4.8rem;
@@ -16,9 +18,10 @@
     --link-size: 0.875rem;
     --link-size-big: 1.125rem;
     --btn-font-size: 1.8rem;
-    --font-weight: 600;
+    --font-weight: 400;
+    --font-weight-bold: 700;
     --section-space: 80px;
-    --heading-margin: 0 0 15px 0;
+    --heading-margin: 0 0 0.5em 0;
     --section-head: 0 0 40px 0;
 }
 *,
@@ -30,13 +33,99 @@
 }
 a {
     text-decoration: none;
+    font-weight: var(--font-weight-bold);
+    display: inline-block;
 }
 
-.link {
-    color: var(--dark-color);
-    font-size: var(--link-size-big);
-    font-weight: var(--font-weight);
+strong .strong{
+    font-weight: var(--font-weight-bold);
 }
+
+img{
+    max-width: 100%;
+}
+
+.w-100{
+    width: 100%;
+}
+
+.pt-0{
+    padding-top: 0 !important;
+}
+.pb-0{
+    padding-bottom: 0 !important;
+}
+
+.radius{
+    border-radius: var(--border-radius);
+}
+
+.flex{
+    display: flex;
+}
+
+.flex-col{
+    display: flex;
+    flex-direction: column;
+}
+.aling-center{
+    align-items: center;
+}
+
+.justify-center{
+    justify-content: center;
+}
+
+
+.link {
+    color: var(--brand-color);
+    font-size: var(--link-size);
+}
+
+.link-big {
+    font-size: var(--link-size-big);
+}
+
+.arrow-icon {
+    position: relative;
+    &::after {
+        content: "";
+        display: inline-block;
+        height: 14px;
+        width: 14px;
+        background: url("../images/arrow-icon.svg") no-repeat center;
+        background-size: contain;
+        position: relative;
+        bottom: -3px;
+        margin-left: 5px;
+        transition: all ease .3s;
+    }
+    &:hover::after{
+        transform: translateX(5px);
+        transition: all ease .3s;
+    }
+}
+
+.card {
+    padding: 15px;
+    border: var(--light-border);
+    border-radius: var(--border-radius);
+    transition: all ease 0.3s;
+    &:hover {
+        box-shadow: var(--box-shadow);
+        transition: all ease 0.3s;
+    }
+}
+
+.card-img {
+    width: 100%;
+    border-radius: var(--border-radius);
+    display: block;
+}
+.card-body {
+    padding: 15px;
+}
+
 
 @import "base/master";
 @import "layouts/header";
@@ -91,6 +180,28 @@ a {
     }
 }
 
+// list
+.checklist {
+    padding: 0;
+    list-style: none;
+    margin: 0 0 20px 0;
+    li {
+        padding-left: 30px;
+        position: relative;
+        &::before {
+            content: "";
+            height: 16px;
+            width: 16px;
+            background: url(../images/check-icon.svg) no-repeat center center;
+            background-size: contain;
+            position: absolute;
+            left: 0;
+            top: 7.5px;
+            display: block;
+        }
+    }
+}
+
 // Contact List
 .contact-list-wrap {
     display: flex;
@@ -125,19 +236,45 @@ a {
     a {
         color: var(--dark-color);
         font-size: var(--link-size-big);
-        font-weight: var(--font-weight);
     }
 }
 
 // section
-.section{
+.section {
     padding: 80px 0;
     display: block;
-    &-header{
+    &-header {
         margin-bottom: 40px;
-        h2, .h2{
+        h2,
+        .h2 {
             margin-bottom: 0;
         }
+    }
+}
+
+// overlay
+.text-overlay{
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+    &::before{
+        content: '';
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        background: var(--overlay);
+    }
+    .ctr{
+        position: relative;
+    }
+}
+
+.dark-bg{
+    h1, h2, h3, h4, h5, ul, ol, li, p{
+        color: #fff;
     }
 }
 
@@ -162,12 +299,23 @@ a {
         padding: 30px;
         background: var(--dark-color);
         border-radius: var(--border-radius);
-        color: #fff;
+        color: var(--light-color);
         margin-bottom: 30px;
+        border: 1px solid var(--brand-color);
+        h1 {
+            color: var(--light-color);
+        }
     }
 }
 
+.services {
+    
+}
 
+.city-punch{
+    background-image: url('../images/delhi-city.jpg');
+    background-attachment: fixed;
+}
 
 @include down-lg {
     .page-hero {
