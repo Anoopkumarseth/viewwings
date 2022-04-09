@@ -7,8 +7,8 @@
         "Noto Sans", "Liberation Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --border-radius: 10px;
     --box-shadow: 0px 4px 80px rgba(0, 0, 0, 0.1);
-    --light-border:1px solid rgba(0, 0, 0, 0.05);
-    --overlay:rgba(0, 0, 0, 0.7);
+    --light-border: 1px solid rgba(0, 0, 0, 0.05);
+    --overlay: rgba(0, 0, 0, 0.7);
     --lead-size: 1.8rem;
     --content-size: 1.125rem;
     --h1-size: 4.8rem;
@@ -37,45 +37,44 @@ a {
     display: inline-block;
 }
 
-strong .strong{
+strong .strong {
     font-weight: var(--font-weight-bold);
 }
 
-img{
+img {
     max-width: 100%;
 }
 
-.w-100{
+.w-100 {
     width: 100%;
 }
 
-.pt-0{
+.pt-0 {
     padding-top: 0 !important;
 }
-.pb-0{
+.pb-0 {
     padding-bottom: 0 !important;
 }
 
-.radius{
+.radius {
     border-radius: var(--border-radius);
 }
 
-.flex{
+.flex {
     display: flex;
 }
 
-.flex-col{
+.flex-col {
     display: flex;
     flex-direction: column;
 }
-.aling-center{
+.aling-center {
     align-items: center;
 }
 
-.justify-center{
+.justify-center {
     justify-content: center;
 }
-
 
 .link {
     color: var(--brand-color);
@@ -98,11 +97,11 @@ img{
         position: relative;
         bottom: -3px;
         margin-left: 5px;
-        transition: all ease .3s;
+        transition: all ease 0.3s;
     }
-    &:hover::after{
+    &:hover::after {
         transform: translateX(5px);
-        transition: all ease .3s;
+        transition: all ease 0.3s;
     }
 }
 
@@ -125,7 +124,6 @@ img{
 .card-body {
     padding: 15px;
 }
-
 
 @import "base/master";
 @import "layouts/header";
@@ -252,30 +250,30 @@ img{
     }
 }
 
-.section-bg{
+.section-bg {
     position: relative;
-    &::before{
-        content: '';
+    &::before {
+        content: "";
         height: 100%;
         width: 100%;
-        background: #FAFAFA;
+        background: #fafafa;
         filter: blur(100px);
         display: block;
         top: 0;
         position: absolute;
     }
-    .ctr{
+    .ctr {
         position: relative;
     }
 }
 
 // overlay
-.text-overlay{
+.text-overlay {
     background-position: center center;
     background-size: cover;
     position: relative;
-    &::before{
-        content: '';
+    &::before {
+        content: "";
         height: 100%;
         width: 100%;
         position: absolute;
@@ -284,14 +282,66 @@ img{
         display: block;
         background: var(--overlay);
     }
-    .ctr{
+    .ctr {
         position: relative;
     }
 }
 
-.dark-bg{
-    h1, h2, h3, h4, h5, ul, ol, li, p{
+.dark-bg {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    ul,
+    ol,
+    li,
+    p {
         color: #fff;
+    }
+}
+
+.stars {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    li {
+        height: 16px;
+        width: 16px;
+        flex: 0 0 16px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        background-image: url("../images/star.svg");
+        &:not(:last-child) {
+            margin-right: 10px;
+        }
+        &.active-half {
+            background-image: url("../images/star-half.svg");
+        }
+        &.active {
+            background-image: url("../images/star-fill.svg");
+        }
+    }
+}
+
+.user {
+    display: flex;
+    .avatar {
+        border-radius: var(--border-radius);
+        max-width: 75px;
+        height: 75px;
+        flex: 0 0 75px;
+        object-fit: cover;
+    }
+    .user-info {
+        .title {
+            margin-bottom: 0;
+        }
+        p {
+            margin-bottom: 0;
+        }
     }
 }
 
@@ -325,28 +375,108 @@ img{
     }
 }
 
-.city-punch{
-    background-image: url('../images/delhi-city.jpg');
+.city-punch {
+    background-image: url("../images/delhi-city.jpg");
     background-attachment: fixed;
 }
 
-.choose-us{
-    .card{
+.choose-us {
+    .card {
         display: flex;
         padding: 30px;
         border: 0;
         background: var(--light-color);
     }
-    .card-img{
+    .card-img {
         max-width: 40px;
         flex: 0 0 40px;
         height: 100%;
     }
-    .card-body{
+    .card-body {
         padding: 0 0 0 30px;
     }
 }
 
+.carousel-wrap {
+    width: calc(50vw + 100% / 2 - 0.44vw);
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 30px;
+    .slider {
+        width: 100%;
+        display: flex;
+        gap: 30px;
+    }
+}
+
+.accordion {
+    padding: 15px 0;
+    &-item {
+        margin-bottom: 10px;
+        background: var(--light-color);
+        transition: all ease 0.3s;
+        position: relative;
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        &:hover {
+            box-shadow: var(--box-shadow);
+            transition: all ease 0.3s;
+            z-index: 10;
+        }
+    }
+    &-header,
+    &-content {
+        padding: 30px;
+    }
+    &-header {
+        cursor: pointer;
+        font-size: 16px;
+        position: relative;
+        transition: all ease 0.5s;
+        user-select: none;
+        display: flex;
+        justify-content: space-between;
+        &::after {
+            position: relative;
+            display: inline-block;
+            content: "";
+            height: 18px;
+            width: 18px;
+            background: url("../images/chevron-down.svg") center center no-repeat;
+            background-size: contain;
+            top: 0;
+            right: 0;
+        }
+        &:not(.active) {
+            margin-bottom: 0;
+        }
+        &.active {
+            background: #fff;
+            transition: all ease 0.5s;
+            padding-bottom: 0;
+            &::after {
+                transform: rotate(180deg);
+            }
+            & + .accordion-content {
+                padding-bottom: 30px;
+            }
+        }
+    }
+    &-content {
+        font-size: 14px;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    &-body {
+        display: none;
+    }
+    &.sub-accordion {
+        padding: 0;
+        margin-bottom: 15px;
+    }
+}
 
 @include down-lg {
     .page-hero {
