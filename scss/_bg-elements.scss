@@ -1,18 +1,42 @@
-.page-hero {
+.page-hero, .elements-section {
     position: relative;
     overflow: hidden;
 }
 .bg-elements {
     &.square {
-        filter: blur(10px);
-        border-radius: 10px;
         position: absolute;
         width: 400px;
         height: 400px;
-        opacity: 0.15 !important;
-        border: 10px solid #06536b;
         display: block;
         right: 0;
         top: 20%;
+        &::after {
+            content: "";
+            border-radius: 10px;
+            filter: blur(10px);
+            height: 100%;
+            width: 100%;
+            display: block;
+            position: absolute;
+            left: 0;
+            right: 0;
+            opacity: 0.15 !important;
+            border: 10px solid #06536b;
+            transform: rotate(140deg);
+        }
+        &-two{
+            right: inherit;
+            left: 0;
+            top: 0;
+            height: 200px;
+            width: 200px;
+        }
+        &-three{
+            top: inherit;
+            right: -100px;
+            bottom: 0;
+            height: 300px;
+            width: 300px;
+        }
     }
 }
