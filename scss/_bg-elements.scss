@@ -1,0 +1,18 @@
+.page-hero {
+    position: relative;
+    overflow: hidden;
+}
+.bg-elements {
+    &.square {
+        filter: blur(10px);
+        border-radius: 10px;
+        position: absolute;
+        width: 400px;
+        height: 400px;
+        opacity: 0.15 !important;
+        border: 10px solid #06536b;
+        display: block;
+        right: 0;
+        top: 20%;
+    }
+}
