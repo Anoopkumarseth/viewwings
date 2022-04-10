@@ -38,5 +38,29 @@
             height: 300px;
             width: 300px;
         }
+        &-four{
+            top: 0;
+            right: unset;
+            left: -10px;
+            bottom: 0;
+            margin: auto;
+            height: 100px;
+            width: 100px;
+        }
+        &-five{
+            top: 0;
+            right: -10px;
+            bottom: 0;
+            margin: auto;
+            height: 200px;
+            width: 200px;
+        }
+        &-six{
+            right: inherit;
+            left: 0;
+            top: 0;
+            height: 200px;
+            width: 200px;
+        }
     }
 }
