@@ -574,6 +574,12 @@ img {
 }
 
 @include down-lg {
+    .section{
+        padding: 40px 0;
+    }
+    .section-header{
+        margin-bottom: 20px;
+    }
     .page-hero {
         display: block;
         .hero-img {
@@ -595,6 +601,12 @@ img {
 
     .subs-newsletter{
         margin-bottom: 20px;
+    }
+    .carousel-wrap {
+        width: 100%;
+        .slider{
+            flex-direction: column;
+        }
     }
 }
 
