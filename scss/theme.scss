@@ -49,7 +49,7 @@ img {
     width: 100%;
 }
 
-.h-100{
+.h-100 {
     height: 100%;
 }
 
@@ -76,7 +76,7 @@ img {
     align-items: center;
 }
 
-.align-end{
+.align-end {
     align-items: flex-end;
 }
 
@@ -386,17 +386,17 @@ img {
             width: 50px;
         }
     }
-    .meta{
-        background-image: url('../images/meta.svg');
+    .meta {
+        background-image: url("../images/meta.svg");
     }
-    .yt{
-        background-image: url('../images/youtube.svg');
+    .yt {
+        background-image: url("../images/youtube.svg");
     }
-    .in{
-        background-image: url('../images/linkedin.svg');
+    .in {
+        background-image: url("../images/linkedin.svg");
     }
-    .twt{
-        background-image: url('../images/twitter.svg');
+    .twt {
+        background-image: url("../images/twitter.svg");
     }
 }
 
@@ -541,21 +541,21 @@ img {
 .site-footer {
     background-image: url("../images/footer-bg.jpg");
     background-attachment: fixed;
-    .form-item{
+    .form-item {
         background: var(--dark-color);
         color: var(--light-color);
-        &::placeholder{
-            color: rgba(255, 255, 255, 0.3);    
+        &::placeholder {
+            color: rgba(255, 255, 255, 0.3);
         }
     }
-    .contact-list-wrap{
+    .contact-list-wrap {
         justify-content: center;
     }
 }
 
-.subs-newsletter{
+.subs-newsletter {
     position: relative;
-    .button{
+    .button {
         position: absolute;
         top: 5px;
         right: 5px;
@@ -564,7 +564,7 @@ img {
     }
 }
 
-.form-item{
+.form-item {
     padding: 10px 20px;
     border: 1px solid var(--brand-color);
     border-radius: var(--border-radius);
@@ -573,11 +573,30 @@ img {
     width: 100%;
 }
 
+@include down-sm {
+    .subs-newsletter {
+        .form-item {
+            margin-bottom: 10px;
+        }
+        .button {
+            position: static;
+            max-width: 100%;
+        }
+    }
+    .page-hero {
+        .button-wrap {
+            padding: 0 15px 15px;
+        }
+        .dark-card {
+            padding: 0;
+        }
+    }
+}
 @include down-lg {
-    .section{
+    .section {
         padding: 40px 0;
     }
-    .section-header{
+    .section-header {
         margin-bottom: 20px;
     }
     .page-hero {
@@ -599,14 +618,13 @@ img {
         justify-content: flex-start;
     }
 
-    .subs-newsletter{
+    .subs-newsletter {
         margin-bottom: 20px;
     }
     .carousel-wrap {
         width: 100%;
-        .slider{
+        .slider {
             flex-direction: column;
         }
     }
 }
-
