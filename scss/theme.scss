@@ -49,6 +49,10 @@ img {
     width: 100%;
 }
 
+.h-100{
+    height: 100%;
+}
+
 .pt-0 {
     padding-top: 0 !important;
 }
@@ -70,6 +74,10 @@ img {
 }
 .aling-center {
     align-items: center;
+}
+
+.align-end{
+    align-items: flex-end;
 }
 
 .justify-center {
@@ -358,6 +366,7 @@ img {
     display: flex;
     margin-right: -10px;
     margin-bottom: -10px;
+    justify-content: center;
     li {
         margin-right: 10px;
         margin-bottom: 10px;
@@ -532,6 +541,36 @@ img {
 .site-footer {
     background-image: url("../images/footer-bg.jpg");
     background-attachment: fixed;
+    .form-item{
+        background: var(--dark-color);
+        color: var(--light-color);
+        &::placeholder{
+            color: rgba(255, 255, 255, 0.3);    
+        }
+    }
+    .contact-list-wrap{
+        justify-content: center;
+    }
+}
+
+.subs-newsletter{
+    position: relative;
+    .button{
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        padding: 8px 24px;
+        border-radius: calc(var(--border-radius) - 2px);
+    }
+}
+
+.form-item{
+    padding: 10px 20px;
+    border: 1px solid var(--brand-color);
+    border-radius: var(--border-radius);
+    display: block;
+    position: relative;
+    width: 100%;
 }
 
 @include down-lg {
@@ -553,4 +592,9 @@ img {
     .contact-list-wrap {
         justify-content: flex-start;
     }
+
+    .subs-newsletter{
+        margin-bottom: 20px;
+    }
 }
+
