@@ -14,8 +14,7 @@
 </head>
 
 <body>
-    <header class="main-naviation">
-        <div class="top-panel">
+    <div class="site-nav top-panel">
             <div class="nav-ctr ctr">
                 <div class="left">
                     <ul class="top-l-nav">
@@ -37,6 +36,7 @@
                 </button>
             </div>
         </div>
+    <header class="site-nav main-nav">
         <nav class="site-navbar">
             <div class="nav-ctr ctr">
                 <div class="site-logo">
@@ -172,9 +172,9 @@
                 </div>
             </div>
         </div>
-        <span class="bg-elements"></span>
     </section>
 
+    <span class="bg-elements lax lax_preset_fadeIn:50:100 lax_preset_spin">dsgfdg</span>
     <section class="section">
         <div class="ctr">
             <div class="section-header">
@@ -435,9 +435,9 @@
             </div>
             <div class="accordion">
                 <div class="accordion-item">
-                    <h2 class="accordion-header" tabindex=0>
+                    <h3 class="accordion-header" tabindex=0>
                         What Is the Cost
-                    </h2>
+                    </h3>
                     <div class="accordion-content">
                         <div class="accordion-body">
                             Website Designing services in Delhi <strong>India with an immense</strong> assorted variety
@@ -450,9 +450,9 @@
                     </div>
                 </div>
                 <div class="accordion-item">
-                    <h2 class="accordion-header" tabindex=0>
+                    <h3 class="accordion-header" tabindex=0>
                         Website Designing services in Delhi India with an immense way of life.
-                    </h2>
+                    </h3>
                     <div class="accordion-content">
                         <div class="accordion-body">
                             There are over <strong>5 million apps available for download</strong> on the Google Play
@@ -464,9 +464,9 @@
                     </div>
                 </div>
                 <div class="accordion-item">
-                    <h2 class="accordion-header" tabindex=0>
+                    <h3 class="accordion-header" tabindex=0>
                         But by doing so you will repeat any action
-                    </h2>
+                    </h3>
                     <div class="accordion-content">
                         <div class="accordion-body">
                             There are over <strong>5 million apps available for download</strong> on the Google Play
@@ -478,9 +478,9 @@
                     </div>
                 </div>
                 <div class="accordion-item">
-                    <h2 class="accordion-header" tabindex=0>
+                    <h3 class="accordion-header" tabindex=0>
                         Element. These classes control
-                    </h2>
+                    </h3>
                     <div class="accordion-content">
                         <div class="accordion-body">
                             There are over <strong>5 million apps available for download</strong> on the Google Play
@@ -495,7 +495,7 @@
             </div>
         </div>
     </section>
-
+    <!-- <div class="selector">Hello</div> -->
     <footer class="section site-footer text-overlay dark-bg section-bg">
         <div class="ctr">
             <div class="row">
@@ -533,7 +533,28 @@
     </footer>
     <!-- script area -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lax.js" ></script>
     <script src="js/script.js"></script>
+    <script>
+        window.onload = function () {
+          lax.init()
+      
+          // Add a driver that we use to control our animations
+          lax.addDriver('scrollY', function () {
+            return window.scrollY
+          })
+      
+          // Add animation bindings to elements
+          lax.addElements('.selector', {
+            scrollY: {
+              translateX: [
+                ["elInY", "elCenterY", "elOutY"],
+                [0, 'screenWidth/2', 'screenWidth'],
+              ]
+            }
+          })
+        }
+      </script>
 </body>
 
 </html>

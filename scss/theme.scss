@@ -109,72 +109,7 @@
     }
 }
 
-.accordion {
-    padding: 15px 0;
-    &-item {
-        margin-bottom: 10px;
-        background: var(--light-color);
-        transition: all ease 0.3s;
-        position: relative;
-        border-radius: var(--border-radius);
-        overflow: hidden;
-        &:hover {
-            box-shadow: var(--box-shadow);
-            transition: all ease 0.3s;
-            z-index: 10;
-        }
-    }
-    &-header,
-    &-content {
-        padding: 30px;
-    }
-    &-header {
-        cursor: pointer;
-        font-size: 16px;
-        position: relative;
-        transition: all ease 0.5s;
-        user-select: none;
-        display: flex;
-        justify-content: space-between;
-        &::after {
-            position: relative;
-            display: inline-block;
-            content: "";
-            height: 18px;
-            width: 18px;
-            background: url("../images/chevron-down.svg") center center no-repeat;
-            background-size: contain;
-            top: 0;
-            right: 0;
-        }
-        &:not(.active) {
-            margin-bottom: 0;
-        }
-        &.active {
-            background: #fff;
-            transition: all ease 0.5s;
-            padding-bottom: 0;
-            &::after {
-                transform: rotate(180deg);
-            }
-            & + .accordion-content {
-                padding-bottom: 30px;
-            }
-        }
-    }
-    &-content {
-        font-size: 14px;
-        padding-top: 0;
-        padding-bottom: 0;
-    }
-    &-body {
-        display: none;
-    }
-    &.sub-accordion {
-        padding: 0;
-        margin-bottom: 15px;
-    }
-}
+
 
 .site-footer {
     background-image: url("../images/footer-bg.jpg");
@@ -231,6 +166,17 @@
     }
 }
 @include down-lg {
+    :root{
+        --content-size: 1rem;
+    }
+    .checklist{
+        li::before{
+            top: 6px;
+        }
+    }
+    .main-naviation .button-one{
+        color: var(--light-color) !important;
+    }
     .section {
         padding: 40px 0;
     }
@@ -264,5 +210,8 @@
         .slider {
             flex-direction: column;
         }
+    }
+    .accordion-header{
+        font-size: 1.125rem;
     }
 }

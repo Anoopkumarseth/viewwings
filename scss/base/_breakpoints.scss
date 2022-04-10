@@ -26,27 +26,27 @@
 
 // For larger device
 @mixin up-sm {
-    @media screen and (max-width: 576px) {
+    @media screen and (min-width: 576px) {
         @content;
     }
 }
 @mixin up-md {
-    @media screen and (max-width: 768px) {
+    @media screen and (min-width: 768px) {
         @content;
     }
 }
 @mixin up-lg {
-    @media screen and (max-width: 992px) {
+    @media screen and (min-width: 992px) {
         @content;
     }
 }
 @mixin up-xl {
-    @media screen and (max-width: 1200px) {
+    @media screen and (min-width: 1200px) {
         @content;
     }
 }
 @mixin up-xxl {
-    @media screen and (max-width: 1400px) {
+    @media screen and (min-width: 1400px) {
         @content;
     }
 }

@@ -21,21 +21,24 @@ h1, h2, h3, h4, h5, h6 {
 	line-height: 1.2;
 }
 h1{
-	font-size: 3rem;
+	font-size: calc(1.375rem + 1.5vw);
 }
 h2{
-	font-size: 2.5rem;
+	font-size: calc(1.325rem + 1vw);
 }
 h3{
-	font-size: 1.5rem;
+	font-size: 1.3rem;
 }
 h4{
-	font-size: 1.125rem;
+	font-size: 1.275rem;
 }
-h4{
-	font-size: 1rem;
+h5{
+	font-size: 1.25rem;
 }
 
+h6{
+	font-size: 1rem;
+}
 p {
 	margin-top: 0;
 	line-height: 2;
@@ -82,4 +85,23 @@ mark, ins {
 
 big {
 	font-size: 125%;
+}
+
+
+@include up-xl{
+	h1{
+		font-size: 3rem;
+	}
+	h2{
+		font-size: 2.5rem;
+	}
+	h3{
+		font-size: 1.5rem;
+	}
+	h4{
+		font-size: 1.125rem;
+	}
+	h4{
+		font-size: 1rem;
+	}
 }
