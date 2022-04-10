@@ -175,7 +175,7 @@ img {
             transition: all ease 0.3s;
             color: var(--light-color);
             &::after{
-                filter: invert(100);
+                filter: invert(100) brightness(100);
             }
         }
     }
@@ -314,6 +314,9 @@ img {
     a {
         color: var(--light-color);
     }
+    .button-one-outline{
+        color: var(--light-color);
+    }
 }
 
 .stars {
@@ -429,6 +432,12 @@ img {
         color: var(--light-color);
         margin-bottom: 30px;
         border: 1px solid var(--brand-color);
+        .button-one-outline{
+            color: var(--light-color);
+            &::after{
+                filter: invert(100) brightness(100);
+            }
+        }
         h1 {
             color: var(--light-color);
         }
