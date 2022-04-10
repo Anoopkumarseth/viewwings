@@ -31,6 +31,8 @@
     margin: 0;
     padding: 0;
 }
+
+
 a {
     text-decoration: none;
     font-weight: var(--font-weight-bold);
@@ -166,11 +168,15 @@ img {
     }
     &-one-outline {
         background: transparent;
-        color: #fff !important;
+        color: var(--brand-color);
         border: 1px solid var(--brand-color);
         &:hover {
             background: var(--brand-color);
             transition: all ease 0.3s;
+            color: var(--light-color);
+            &::after{
+                filter: invert(100);
+            }
         }
     }
 }
@@ -178,7 +184,6 @@ img {
 .button-wrap {
     display: flex;
     flex-wrap: wrap;
-    margin-right: -15px;
     margin-bottom: -15px;
     .button {
         margin-right: 15px;
