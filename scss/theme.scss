@@ -107,6 +107,7 @@
 .testimonial {
     .card {
         padding: 30px;
+        margin: 0 10px 0 0;
     }
 }
 
@@ -146,6 +147,8 @@
     position: relative;
     width: 100%;
 }
+
+
 
 @include down-sm {
     .subs-newsletter {

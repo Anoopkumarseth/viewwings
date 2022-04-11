@@ -37,6 +37,10 @@
     justify-content: center;
 }
 
+.justify-beetween{
+    justify-content: space-between;
+}
+
 .link {
     color: var(--brand-color);
     font-size: var(--link-size);
@@ -63,5 +67,14 @@
     &:hover::after {
         transform: translateX(5px);
         transition: all ease 0.3s;
+    }
+}
+
+@include down-md{
+    .row-col-md-reverse{
+        flex-direction: column-reverse;
+    }
+    .md-mb{
+        margin-bottom: 10px;
     }
 }
