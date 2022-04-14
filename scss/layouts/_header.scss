@@ -13,6 +13,10 @@ $light-color: #eee;
         width: 100%;
         flex: 0 0 200px;
         max-width: 200px;
+        a{
+            display: flex;
+            align-items: center;
+        }
     }
     .button-one{
         color: #fff !important;
@@ -251,6 +255,12 @@ $light-color: #eee;
             display: block;
             margin-right: 0;
         }
+        .site-navbar{
+            .toggle {
+                position: relative;
+                z-index: 9999;
+            }
+        }
         .nav-ctr {
             padding: 15px !important;
         }
@@ -303,9 +313,13 @@ $light-color: #eee;
             transition: all ease 0.3s;
             padding-top: 50px;
             overflow: auto;
+            max-width: 300px;
+            box-shadow: 0px 0 0px 0px rgba(0, 0, 0, 0);
+            border-right:1px solid rgba(0, 0, 0, 0.1);
             &.active {
                 transform: none;
                 transition: all ease 0.3s;
+                box-shadow: 60px 0 40px 0px rgba(0, 0, 0, 0.1);
             }
         }
 

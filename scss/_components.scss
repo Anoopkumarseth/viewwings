@@ -233,8 +233,10 @@
     }
     .user-info {
         padding-left: 15px;
-        .title {
+        .user-name {
             margin-bottom: 0;
+            color: var(--brand-color);
+            font-size: 1rem;
         }
         p {
             margin-bottom: 0;

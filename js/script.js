@@ -5,7 +5,9 @@ $(".search-form").click(function (e) {
     e.stopPropagation();
 });
 $(".togglePrimary").click(function () {
+    $(this).toggleClass("active")
     $(".primaryMenu").toggleClass("active");
+    $("body").toggleClass("open-menu");
 });
 $(".toggleTopbar").click(function () {
     $(".top-r-nav").toggleClass("active")
@@ -62,12 +64,10 @@ new Glider(document.querySelector('.gliderSlider'), {
 });
 
 var glider = new Glider(document.querySelector('.gliderSlider'));
-
 function sliderAuto(slider, miliseconds) {
     const slidesCount = slider.track.childElementCount;
     let slideTimeout = null;
     let nextIndex = 1;
-
     function slide() {
         slideTimeout = setTimeout(
             function () {
@@ -79,13 +79,10 @@ function sliderAuto(slider, miliseconds) {
             miliseconds
         );
     }
-
     slider.ele.addEventListener('glider-animated', function () {
         window.clearInterval(slideTimeout);
         slide();
     });
-
     slide();
 }
-
 sliderAuto(glider, 2000)
