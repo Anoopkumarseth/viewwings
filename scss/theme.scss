@@ -69,7 +69,6 @@
 }
 
 .city-punch {
-    background-image: url("../images/delhi-city.webp");
     background-attachment: fixed;
     background-repeat: repeat-y;
 }
@@ -91,16 +90,16 @@
     }
 }
 
-.carousel-wrap {
+.items-wrap {
     width: calc(50vw + 100% / 2 - 0.44vw);
     display: flex;
     flex-wrap: wrap;
     position: relative;
     padding-bottom: 30px;
-    .slider {
+    .items-row {
         width: 100%;
-        display: flex;
-        gap: 30px;
+        // display: flex;
+        // gap: 30px;
     }
 }
 
@@ -114,7 +113,6 @@
 
 
 .site-footer {
-    background-image: url("../images/footer-bg.webp");
     background-attachment: fixed;
     .form-item {
         background: var(--dark-color);
@@ -220,5 +218,21 @@
     }
 }
 
+@include up-md{
+    .site-footer{
+        background-image: url('../images/footer-bg.jpg')
+    }
+    .city-punch{
+        background-image: url('../images/delhi-city.jpg')
+    }
+}
+@include down-md{
+    .site-footer{
+        background-image: url('../images/footer-bg-mob.jpg')
+    }
+    .city-punch{
+        background-image: url('../images/delhi-city-mob.jpg')
+    }
+}
 
 @import 'bg-elements';
