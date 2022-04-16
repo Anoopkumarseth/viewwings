@@ -18,7 +18,7 @@
     --link-size: 0.875rem;
     --link-size-big: 1.125rem;
     --btn-font-size: 1.8rem;
-    --badge-font:.75rem;
+    --badge-font: 0.75rem;
     --font-weight: 400;
     --font-weight-bold: 700;
     --section-space: 80px;
@@ -26,12 +26,9 @@
     --section-head: 0 0 40px 0;
 }
 
-
 @import "base/master";
 @import "layouts/header";
 @import "components";
-
-
 
 // Site Hero
 .site-hero {
@@ -59,9 +56,9 @@
     color: var(--light-color);
     margin-bottom: 30px;
     border: 1px solid var(--brand-color);
-    .button-one-outline{
+    .button-one-outline {
         color: var(--light-color);
-        &::after{
+        &::after {
             filter: invert(100) brightness(100);
         }
     }
@@ -70,15 +67,15 @@
     }
 }
 
-.page-hero{
-    .hero-img{
+.page-hero {
+    .hero-img {
         width: 100%;
         display: block;
         min-height: 200px;
         max-height: 250px;
         object-fit: cover;
     }
-    .dark-card{
+    .dark-card {
         margin-top: -150px;
     }
 }
@@ -125,8 +122,6 @@
     }
 }
 
-
-
 .site-footer {
     background-attachment: fixed;
     .form-item {
@@ -161,8 +156,6 @@
     width: 100%;
 }
 
-
-
 @include down-sm {
     .subs-newsletter {
         .form-item {
@@ -183,15 +176,15 @@
     }
 }
 @include down-lg {
-    :root{
+    :root {
         --content-size: 1rem;
     }
-    .checklist{
-        li::before{
+    .checklist {
+        li::before {
             top: 6px;
         }
     }
-    .main-naviation .button-one{
+    .main-naviation .button-one {
         color: var(--light-color) !important;
     }
     .section {
@@ -228,36 +221,53 @@
             flex-direction: column;
         }
     }
-    .accordion-header{
+    .accordion-header {
         font-size: 1.125rem;
     }
 
-    .card.horizontal{
+    .card.horizontal {
         display: block;
-        .card-body{
+        .card-body {
             padding: 15px;
         }
-        .card-img{
+        .card-img {
             max-width: unset;
         }
     }
+
+    .scrollspy {
+        flex-direction: row;
+        top: unset;
+        left: 0;
+        right: 0;
+        padding: 15px;
+        background: #fff;
+        bottom: 0;
+        box-shadow: -10px 10px 10px 10px rgba(0, 0, 0, 0.1);
+        li {
+            margin-bottom: 0 !important;
+            &:not(:last-child) {
+                margin-right: 10px;
+            }
+        }
+    }
 }
 
-@include up-md{
-    .site-footer{
-        background-image: url('../images/footer-bg.jpg')
+@include up-md {
+    .site-footer {
+        background-image: url("../images/footer-bg.jpg");
     }
-    .city-punch{
-        background-image: url('../images/delhi-city.jpg')
+    .city-punch {
+        background-image: url("../images/delhi-city.jpg");
     }
 }
-@include down-md{
-    .site-footer{
-        background-image: url('../images/footer-bg-mob.jpg')
+@include down-md {
+    .site-footer {
+        background-image: url("../images/footer-bg-mob.jpg");
     }
-    .city-punch{
-        background-image: url('../images/delhi-city-mob.jpg')
+    .city-punch {
+        background-image: url("../images/delhi-city-mob.jpg");
     }
 }
 
-@import 'bg-elements';
+@import "bg-elements";

@@ -28,7 +28,6 @@ window.onload = function () {
     lax.addDriver('scrollY', function () {
         return window.scrollY
     })
-
 }
 
 if($('.gliderSlider').length){
