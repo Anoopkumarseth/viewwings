@@ -13,9 +13,19 @@
     padding-bottom: 0 !important;
 }
 
+.mb-0{
+    margin-bottom: 0 !important;
+}
+
 .radius {
     border-radius: var(--border-radius);
 }
+
+.relative{
+    position: relative;
+}
+
+
 
 .flex {
     display: flex;
@@ -50,6 +60,10 @@
     font-size: var(--link-size-big);
 }
 
+img.covered{
+    object-fit: cover;
+}
+
 .arrow-icon {
     position: relative;
     &::after {
@@ -70,6 +84,12 @@
     }
 }
 
+@include up-lg{
+    .pos-sticky-lg{
+        position: sticky;
+        top: 100px;
+    }
+}
 @include down-md{
     .row-col-md-reverse{
         flex-direction: column-reverse;

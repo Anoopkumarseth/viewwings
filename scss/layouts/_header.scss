@@ -9,16 +9,17 @@ $light-color: #eee;
         box-shadow: 0 10px 10px 0px rgba(0, 0, 0, 0.05);
     }
 
-    .site-logo{
+    .site-logo {
         width: 100%;
         flex: 0 0 200px;
-        max-width: 200px;
-        a{
+        width: 200px;
+        height: 37px;
+        a {
             display: flex;
             align-items: center;
         }
     }
-    .button-one{
+    .button-one {
         color: #fff !important;
     }
     li {
@@ -135,9 +136,9 @@ $light-color: #eee;
         a {
             padding: 30px;
             white-space: nowrap;
-            text-transform: uppercase;
+            // text-transform: uppercase;
             font-weight: 600;
-            font-size: 14px;
+            font-size: 1rem;
         }
         li {
             position: relative;
@@ -163,9 +164,37 @@ $light-color: #eee;
         border-top: 2px solid var(--brand-color);
         a {
             padding: 15px 35px;
+            // font-size: .825rem;
             &::after {
                 transform: rotate(-90deg);
             }
+        }
+        // li a {
+        //     position: relative;
+        //     &::after {
+        //         display: block;
+        //         content: "";
+        //         height: 2px;
+        //         width: 100%;
+        //         max-width: 25px;
+        //         transition: all ease-in-out 0.3s;
+        //         background: var(--brand-color);
+        //         transform: none;
+        //         top: 5px;
+        //         position: relative;
+        //         opacity: 0.1;
+        //         filter: grayscale(100);
+        //         margin: auto;
+        //     }
+        //     &:hover::after {
+        //         max-width: 100%;
+        //         transition: all ease-in-out 0.3s;
+        //         opacity: 1;
+        //         filter: none;
+        //     }
+        // }
+        li:not(:last-child){
+            border-bottom: 1px solid rgba(0, 0, 0, 0.02);
         }
 
         .sub-menu {
@@ -241,21 +270,21 @@ $light-color: #eee;
     .quotes-btn {
         display: flex;
         align-items: center;
-        a{
+        a {
             @extend .button;
             @extend .button-one;
             text-transform: none;
         }
     }
     @include down-lg {
-        .quotes-btn{
+        .quotes-btn {
             padding: 0 25px 20px;
         }
         .toggle {
             display: block;
             margin-right: 0;
         }
-        .site-navbar{
+        .site-navbar {
             .toggle {
                 position: relative;
                 z-index: 9999;
@@ -315,7 +344,7 @@ $light-color: #eee;
             overflow: auto;
             max-width: 300px;
             box-shadow: 0px 0 0px 0px rgba(0, 0, 0, 0);
-            border-right:1px solid rgba(0, 0, 0, 0.1);
+            border-right: 1px solid rgba(0, 0, 0, 0.1);
             &.active {
                 transform: none;
                 transition: all ease 0.3s;

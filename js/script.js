@@ -30,59 +30,83 @@ window.onload = function () {
     })
 
 }
-new Glider(document.querySelector('.gliderSlider'), {
-    slidesToScroll: 1,
-    slidesToShow: 1,
-    draggable: true,
-    dots: false,
-    scrollLock: true,
-    arrows: {
-        prev: '.glider-prev',
-        next: '.glider-next'
-    },
-    responsive: [
-        {
-            // screens greater than >= 775px
-            breakpoint: 775,
-            settings: {
-                // Set to `auto` and provide item width to adjust to viewport
-                slidesToShow: 2,
-                slidesToScroll: 1,
-                itemWidth: 'auto',
-                duration: 0.25
-            }
-        }, {
-            // screens greater than >= 1024px
-            breakpoint: 1024,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 1,
-                duration: 0.25
-            }
-        }
-    ]
-});
 
-var glider = new Glider(document.querySelector('.gliderSlider'));
-function sliderAuto(slider, miliseconds) {
-    const slidesCount = slider.track.childElementCount;
-    let slideTimeout = null;
-    let nextIndex = 1;
-    function slide() {
-        slideTimeout = setTimeout(
-            function () {
-                if (nextIndex >= slidesCount) {
-                    nextIndex = 0;
+if($('.gliderSlider').length){
+    new Glider(document.querySelector('.gliderSlider'), {
+        slidesToScroll: 1,
+        slidesToShow: 1,
+        draggable: true,
+        dots: false,
+        scrollLock: true,
+        arrows: {
+            prev: '.glider-prev',
+            next: '.glider-next'
+        },
+        responsive: [
+            {
+                // screens greater than >= 775px
+                breakpoint: 775,
+                settings: {
+                    // Set to `auto` and provide item width to adjust to viewport
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    itemWidth: 'auto',
+                    duration: 0.25
                 }
-                slider.scrollItem(nextIndex++);
-            },
-            miliseconds
-        );
-    }
-    slider.ele.addEventListener('glider-animated', function () {
-        window.clearInterval(slideTimeout);
-        slide();
+            }, {
+                // screens greater than >= 1024px
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    duration: 0.25
+                }
+            }
+        ]
     });
-    slide();
+    
+    var glider = new Glider(document.querySelector('.gliderSlider'));
+    function sliderAuto(slider, miliseconds) {
+        const slidesCount = slider.track.childElementCount;
+        let slideTimeout = null;
+        let nextIndex = 1;
+        function slide() {
+            slideTimeout = setTimeout(
+                function () {
+                    if (nextIndex >= slidesCount) {
+                        nextIndex = 0;
+                    }
+                    slider.scrollItem(nextIndex++);
+                },
+                miliseconds
+            );
+        }
+        slider.ele.addEventListener('glider-animated', function () {
+            window.clearInterval(slideTimeout);
+            slide();
+        });
+        slide();
+    }
+    sliderAuto(glider, 2000)
 }
-sliderAuto(glider, 2000)
+
+if($(".scrollspyItem").length){
+    $('body').append('<ul class="scrollspy"></ul>')
+    $(".scrollspyItem").each(function(index){
+        $(this).addClass("spyItem" + index)
+        $('.scrollspy').append(`<li class='spy-link${index}'><a href="#">${$(this).find('.card-title').text()}</a></li>`)
+        var offset = $(this).offset().top - $('.main-nav').outerHeight() - 100;
+        $(window).scroll(function(){
+            if($(window).scrollTop() > offset){
+                $('.spy-link'+ index).addClass("active").siblings().removeClass('active');
+            } else{
+                $('.spy-link'+ index).removeClass('active');
+            }
+        });
+        $('.spy-link'+ index).click(function(e){
+            e.preventDefault();
+            $(this).addClass("active").siblings().removeClass('active');
+            $("html, body").animate({ scrollTop: offset + 100 }, 1000);
+        })       
+    })
+}
