@@ -89,23 +89,41 @@ if($('.gliderSlider').length){
     sliderAuto(glider, 2000)
 }
 
-if($(".scrollspyItem").length){
-    $('body').append('<ul class="scrollspy"></ul>')
-    $(".scrollspyItem").each(function(index){
-        $(this).addClass("spyItem" + index)
-        $('.scrollspy').append(`<li class='spy-link${index}'><a href="#">${$(this).find('.card-title').text()}</a></li>`)
-        var offset = $(this).offset().top - $('.main-nav').outerHeight() - 100;
-        $(window).scroll(function(){
-            if($(window).scrollTop() > offset){
-                $('.spy-link'+ index).addClass("active").siblings().removeClass('active');
-            } else{
-                $('.spy-link'+ index).removeClass('active');
-            }
-        });
-        $('.spy-link'+ index).click(function(e){
-            e.preventDefault();
-            $(this).addClass("active").siblings().removeClass('active');
-            $("html, body").animate({ scrollTop: offset + 100 }, 1000);
-        })       
-    })
+function scrollSpy(){
+    if($(".scrollspyItem").length){
+        $('body').append('<ul class="scrollspy"></ul>')
+        $(".scrollspyItem").each(function(index){
+            $(this).addClass("spyItem" + index)
+            $('.scrollspy').append(`<li class='spy-link${index}'><a href="#">${$(this).find('.card-title').text()}</a></li>`)
+            var offset = $(this).offset().top - $('.main-nav').outerHeight() - 100;
+            $(window).scroll(function(){
+                if($(window).scrollTop() > offset){
+                    $('.spy-link'+ index).addClass("active").siblings().removeClass('active');
+                } else{
+                    $('.spy-link'+ index).removeClass('active');
+                }
+            });
+            $('.spy-link'+ index).click(function(e){
+                e.preventDefault();
+                $(this).addClass("active").siblings().removeClass('active');
+                $("html, body").animate({ scrollTop: offset + 100 }, 1000);
+            })       
+        })
+    }
 }
+scrollSpy();
+
+function modalHandler() {
+    $(".modal, .modal-backdrop").hide()
+    $(".button-modal").click(function () {
+      var elementName = $(this).attr("id");
+      console.log(elementName)
+      $(".modal[rel='" + elementName + "']").show()
+      $("body").append('<div class="modal-backdrop"></div>');
+    })
+    $(".modal-close").click(function () {
+      $(".modal, .modal-backdrop").hide()
+      $(".modal-backdrop").remove()
+    })
+  }
+  modalHandler()
