@@ -96,34 +96,47 @@ function scrollSpy(){
             $(this).addClass("spyItem" + index)
             $('.scrollspy').append(`<li class='spy-link${index}'><a href="#">${$(this).find('.card-title').text()}</a></li>`)
             var offset = $(this).offset().top - $('.main-nav').outerHeight() - 100;
+            var parentOffset = $('.scrollspyItem').parents('.section').next('.section').offset().top - 160;
             $(window).scroll(function(){
                 if($(window).scrollTop() > offset){
                     $('.spy-link'+ index).addClass("active").siblings().removeClass('active');
                 } else{
                     $('.spy-link'+ index).removeClass('active');
                 }
+                if($(window).scrollTop() > parentOffset){
+                    $('.scrollspy').addClass('not-active');
+                } else {
+                    $('.scrollspy').removeClass('not-active');
+                }
             });
             $('.spy-link'+ index).click(function(e){
                 e.preventDefault();
-                $(this).addClass("active").siblings().removeClass('active');
+                $(this).addClass("active").siblings();
                 $("html, body").animate({ scrollTop: offset + 100 }, 1000);
             })       
         })
     }
 }
 scrollSpy();
+$(window).resize(function() {
+    $('.scrollspy').remove();
+    scrollSpy();
+});
 
 function modalHandler() {
-    $(".modal, .modal-backdrop").hide()
     $(".button-modal").click(function () {
       var elementName = $(this).attr("id");
-      console.log(elementName)
-      $(".modal[rel='" + elementName + "']").show()
-      $("body").append('<div class="modal-backdrop"></div>');
+      $("body").append('<div class="modal-backdrop" style="display:none"></div>');
+      $('.modal-backdrop').fadeIn(function(){
+        $(".modal[rel='" + elementName + "']").addClass('modal-show');
+      })
     })
-    $(".modal-close").click(function () {
-      $(".modal, .modal-backdrop").hide()
-      $(".modal-backdrop").remove()
-    })
+    $(".modal-close, .modal").click(function () {
+      $(".modal").removeClass('modal-show');
+      $(".modal-backdrop").fadeOut(function(){
+        $(".modal-backdrop").remove()
+      })    
+    });
+    $('.modal-dialog').click(function(e){e.stopPropagation()})
   }
   modalHandler()

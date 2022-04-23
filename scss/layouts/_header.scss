@@ -349,6 +349,7 @@ $light-color: #eee;
                 transform: none;
                 transition: all ease 0.3s;
                 box-shadow: 60px 0 40px 0px rgba(0, 0, 0, 0.1);
+                border-radius: var(--border-radius);
             }
         }
 
