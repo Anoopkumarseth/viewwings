@@ -41,9 +41,10 @@ Table of content
     &-one {
         background: var(--brand-color);
         color: #fff !important;
-        &:hover {
+        &:hover, &:focus-visible {
             box-shadow: inset 0 0 0 100px rgba(0, 0, 0, 0.2);
             transition: all ease 0.3s;
+            outline: none;
         }
         &.arrow-icon::after {
             filter: invert(100) brightness(100);
@@ -266,32 +267,34 @@ Table of content
         margin-right: 10px;
         margin-bottom: 10px;
         flex: 0 0 auto;
-        background-color: var(--dark-color);
-        background-position: center center;
-        background-repeat: no-repeat;
         border-radius: var(--border-radius);
         transition: all 0.3s ease-in-out;
-        border: 1px solid var(--brand-color);
-        &:hover {
+        &:hover a, a:focus-visible {
             background-color: var(--brand-color);
             transition: all 0.3s ease-in-out;
+            outline: none;
         }
         a {
             display: block;
             height: 50px;
             width: 50px;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--brand-color);
+            background-color: var(--dark-color);
+        background-position: center center;
+        background-repeat: no-repeat;
         }
     }
-    .meta {
+    .meta a {
         background-image: url("../images/meta.svg");
     }
-    .yt {
+    .yt a {
         background-image: url("../images/youtube.svg");
     }
-    .in {
+    .in a {
         background-image: url("../images/linkedin.svg");
     }
-    .twt {
+    .twt a {
         background-image: url("../images/twitter.svg");
     }
 }
@@ -669,6 +672,7 @@ textarea,
         color: var(--brand-color);
     }
 }
+
 
 select {
     appearance: none;

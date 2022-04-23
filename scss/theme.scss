@@ -8,7 +8,7 @@
     --border-radius: 10px;
     --box-shadow: 0px 4px 80px rgba(0, 0, 0, 0.1);
     --light-border: 1px solid rgba(0, 0, 0, 0.05);
-    --overlay: rgba(0, 0, 0, 0.7);
+    --overlay: linear-gradient(0deg, rgba(9, 27, 51, 0.8), rgba(9, 27, 51, 0.8));
     --lead-size: 1.8rem;
     --content-size: 1rem;
     --h1-size: 4.8rem;
@@ -124,9 +124,10 @@
 
 .site-footer {
     background-attachment: fixed;
-    .form-item {
+    .form-field {
         background: var(--dark-color);
         color: var(--light-color);
+        margin-bottom: 0;
         &::placeholder {
             color: rgba(255, 255, 255, 0.3);
         }
@@ -137,6 +138,31 @@
     .contact-list-wrap {
         justify-content: center;
     }
+    .copyright{
+        background: var(--dark-color);
+        padding: 15px 0;
+        position: relative;
+        border-top: 1px solid var(--brand-color);
+        p, a{
+            margin-bottom: 0;
+            opacity: .5;
+            font-weight: var(--font-weight);
+            transition: all .3s ease-in-out;
+        }
+        a:hover{
+            opacity: 1;
+        }
+    }
+}
+.footer-links{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    li:not(:last-child):after{
+        content: '|';
+        margin: 0 15px;
+        opacity: .5;
+    }
 }
 
 .subs-newsletter {
@@ -145,12 +171,13 @@
         position: absolute;
         top: 5px;
         right: 5px;
-        padding: 8px 24px;
+        padding: 8.5px 24px;
         border-radius: calc(var(--border-radius) - 2px);
+        height: unset;
     }
 }
 
-.form-item {
+.form-field {
     padding: 10px 20px;
     border: 1px solid var(--brand-color);
     border-radius: var(--border-radius);
