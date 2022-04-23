@@ -16,6 +16,9 @@ Table of content
 12. accordion
 13. badge
 14. scrollspy
+15. modal
+16. input
+-----------------
 */
 
 // 1. Buttons
@@ -687,4 +690,13 @@ select {
 
 textarea {
     resize: vertical;
+}
+
+.form-field {
+    padding: 10px 20px;
+    border: 1px solid var(--brand-color);
+    border-radius: var(--border-radius);
+    display: block;
+    position: relative;
+    width: 100%;
 }

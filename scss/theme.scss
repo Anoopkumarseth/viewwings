@@ -123,6 +123,7 @@
 }
 
 .site-footer {
+    border-top: 5px solid var(--brand-color);
     background-attachment: fixed;
     .form-field {
         background: var(--dark-color);
@@ -177,15 +178,15 @@
     }
 }
 
-.form-field {
-    padding: 10px 20px;
-    border: 1px solid var(--brand-color);
-    border-radius: var(--border-radius);
-    display: block;
-    position: relative;
-    width: 100%;
-    margin-bottom: 0;
+// contact page
+.contact-items {
+    max-width: max-content;
+    margin: 0 auto;
+    .social-list{
+        margin-right: 0;
+    }
 }
+
 
 
 @include down-sm {
@@ -281,6 +282,15 @@
             &:not(:last-child) {
                 margin-right: 10px;
             }
+        }
+    }
+    .site-footer{
+        padding-bottom: 55px;
+        .copyright .ctr{
+            flex-direction: column;
+        }
+        .form-field, .social-list{
+            margin-bottom: 10px;
         }
     }
 }
