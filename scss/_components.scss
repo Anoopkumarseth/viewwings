@@ -44,7 +44,8 @@ Table of content
     &-one {
         background: var(--brand-color);
         color: #fff !important;
-        &:hover, &:focus-visible {
+        &:hover,
+        &:focus-visible {
             box-shadow: inset 0 0 0 100px rgba(0, 0, 0, 0.2);
             transition: all ease 0.3s;
             outline: none;
@@ -84,7 +85,7 @@ Table of content
     list-style: none;
     margin: 0 0 20px 0;
     display: inline-block;
-    &:not(:last-child){
+    &:not(:last-child) {
         margin-right: 20px;
     }
     li {
@@ -276,7 +277,8 @@ Table of content
         flex: 0 0 auto;
         border-radius: var(--border-radius);
         transition: all 0.3s ease-in-out;
-        &:hover a, a:focus-visible {
+        &:hover a,
+        a:focus-visible {
             background-color: var(--brand-color);
             transition: all 0.3s ease-in-out;
             outline: none;
@@ -288,8 +290,8 @@ Table of content
             border-radius: var(--border-radius);
             border: 1px solid var(--brand-color);
             background-color: var(--dark-color);
-        background-position: center center;
-        background-repeat: no-repeat;
+            background-position: center center;
+            background-repeat: no-repeat;
         }
     }
     .meta a {
@@ -573,7 +575,7 @@ Table of content
     visibility: hidden;
     opacity: 0;
     width: 100%;
-    transition: all ease-in-out .3s;
+    transition: all ease-in-out 0.3s;
     top: 100%;
     &-show {
         height: 100%;
@@ -582,9 +584,14 @@ Table of content
         top: 0;
     }
     &-backdrop {
-        background: var(--dark-color);
-        opacity: 0.8;
+        background: var(--overlay);
         z-index: 1001;
+        top: 0;
+        left: 0;
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        backdrop-filter: blur(1px);
     }
 
     &-header {
@@ -646,14 +653,6 @@ Table of content
     }
 }
 
-.modal-backdrop {
-    top: 0;
-    left: 0;
-    position: fixed;
-    height: 100%;
-    width: 100%;
-}
-
 // 16. inputs
 input,
 select,
@@ -669,7 +668,7 @@ textarea,
     &:not(:last-child) {
         margin: 0 0 20px 0;
     }
-    &:not(textarea){
+    &:not(textarea) {
         height: 50px;
     }
     &:focus-visible {
@@ -679,7 +678,6 @@ textarea,
         color: var(--brand-color);
     }
 }
-
 
 select {
     appearance: none;
