@@ -192,9 +192,14 @@ function modalHandler() {
         ModalMadedNext = ModalMaded.next('.modalMaded');
         if(!ModalMadedPrev.length){
             $(".modal-navigator .prev").addClass('disabled');
+        } else {
+            $(".modal-navigator .prev").removeClass('disabled');
+
         }
         if(!ModalMadedNext.length){
             $(".modal-navigator .next").addClass('disabled');
+        } else {
+            $(".modal-navigator .next").removeClass('disabled');
         }
     })
     $(".modal-close, .modal").click(function () {
