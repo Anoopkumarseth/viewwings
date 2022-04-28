@@ -90,6 +90,9 @@
 .city-punch {
     background-attachment: fixed;
     background-repeat: repeat-y;
+    border-top: 5px solid;
+    border-bottom: 5px solid;
+    border-color: var(--brand-color);
 }
 
 .choose-us {
@@ -126,6 +129,9 @@
     .card {
         padding: 30px;
         margin: 0 10px 0 0;
+        &:hover{
+            box-shadow: var(--box-shadow) inset;
+        }
     }
 }
 
