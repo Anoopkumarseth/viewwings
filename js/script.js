@@ -171,8 +171,7 @@ function modalMaker() {
                 $(".modal-navigator .prev").removeClass('disabled')
 
             }
-        });
-        
+        });        
     }
 }
 modalMaker();
