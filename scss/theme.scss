@@ -73,10 +73,17 @@
         display: block;
         min-height: 200px;
         max-height: 250px;
+        height: 500px;
         object-fit: cover;
     }
     .dark-card {
         margin-top: -150px;
+    }
+}
+
+.hero-caption{
+    p{
+        font-size: 1.125rem;
     }
 }
 
@@ -133,36 +140,37 @@
             color: rgba(255, 255, 255, 0.3);
         }
     }
-    .contact-list li::before{
+    .contact-list li::before {
         filter: invert(100) brightness(100);
     }
     .contact-list-wrap {
         justify-content: center;
     }
-    .copyright{
+    .copyright {
         background: var(--dark-color);
         padding: 15px 0;
         position: relative;
         border-top: 1px solid var(--brand-color);
-        p, a{
+        p,
+        a {
             margin-bottom: 0;
-            opacity: .5;
+            opacity: 0.5;
             font-weight: var(--font-weight);
-            transition: all .3s ease-in-out;
+            transition: all 0.3s ease-in-out;
         }
-        a:hover{
+        a:hover {
             opacity: 1;
         }
     }
 }
-.footer-links{
+.footer-links {
     padding: 0;
     margin: 0;
     list-style: none;
-    li:not(:last-child):after{
-        content: '|';
+    li:not(:last-child):after {
+        content: "|";
         margin: 0 15px;
-        opacity: .5;
+        opacity: 0.5;
     }
 }
 
@@ -178,16 +186,41 @@
     }
 }
 
+.map {
+    position: relative;
+    &::before {
+        content: "Loading Google Map...";
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: var(--dark-color);
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: var(--box-shadow) inset;
+    }
+    iframe {
+        display: block;
+        position: relative;
+        z-index: 99 ;
+    }
+}
+
+.glider{
+    scrollbar-width: none;
+}
+
 // contact page
 .contact-items {
     max-width: max-content;
     margin: 0 auto;
-    .social-list{
+    .social-list {
         margin-right: 0;
     }
 }
-
-
 
 @include down-sm {
     .subs-newsletter {
@@ -284,12 +317,13 @@
             }
         }
     }
-    .site-footer{
+    .site-footer {
         padding-bottom: 55px;
-        .copyright .ctr{
+        .copyright .ctr {
             flex-direction: column;
         }
-        .form-field, .social-list{
+        .form-field,
+        .social-list {
             margin-bottom: 10px;
         }
     }

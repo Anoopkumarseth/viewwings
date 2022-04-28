@@ -314,6 +314,7 @@ Table of content
     border: var(--light-border);
     border-radius: var(--border-radius);
     transition: all ease 0.3s;
+    position: relative;
     &:not(:first-child) {
         margin-top: 40px;
     }
@@ -575,13 +576,23 @@ Table of content
     visibility: hidden;
     opacity: 0;
     width: 100%;
-    transition: all ease-in-out 0.3s;
+    transition: all ease-in-out .279s;
     top: 100%;
     &-show {
         height: 100%;
         visibility: visible;
         opacity: 1;
         top: 0;
+        .modal-dialog{
+            max-width: 650px;
+            overflow: unset;
+            transform: none;
+            opacity: 1;
+            visibility: visible;
+        }
+        .modal-xl{
+            max-width: 1200px;
+        }
     }
     &-backdrop {
         background: var(--overlay);
@@ -616,7 +627,7 @@ Table of content
     }
 
     &-dialog {
-        max-width: 650px;
+        max-width: 0px;
         margin: 1.75rem auto;
         position: relative;
         width: auto;
@@ -626,6 +637,11 @@ Table of content
         border-radius: var(--border-radius);
         z-index: 11;
         margin-top: 50px;
+        opacity: 0;
+        overflow: hidden;
+        visibility: hidden;
+        transition: ease-in-out .3s all;
+        transform: scale(0);
     }
     &-close {
         color: var(--light-color);
@@ -649,6 +665,45 @@ Table of content
         padding-bottom: 30px;
         .btn {
             margin: 0;
+        }
+    }
+
+    &-expand {
+        height: 25px;
+        width: 25px;
+        display: block;
+        background: url('../images/expand.svg') no-repeat center center;
+        background-size: contain;
+        margin-left: auto;
+        margin-right: 30px;
+        &.expanded{
+            background: url('../images/contract.svg') no-repeat center center;
+            background-size: contain;
+        }
+    }
+
+    .modal-navigator {
+        color: #fff;
+        display: flex;
+        justify-content: space-around;
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        align-items: center;
+        li{
+            height: 50px;
+            width: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            list-style: none;
+            transition: all ease-in-out .3s;
+        }
+        .disabled{
+            pointer-events: none;
+            opacity: 0;
         }
     }
 }
@@ -685,9 +740,7 @@ select {
     background-position: center right 15px;
     background-repeat: no-repeat;
     background-size: 1rem;
-    &[disabled] {
-        background-color: blue;
-    }
+    background-color: var(--light-color);
 }
 
 textarea {
