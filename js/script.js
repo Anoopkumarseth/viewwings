@@ -129,7 +129,7 @@ function modalMaker() {
         $(".makeModal").each(function (index) {
             title = $(this).find('.card-title').text();
             $(this).find('a').addClass('button-modal link-stretch').attr('id', 'makeModal' + index);
-            image = $(this).find('.card-img-big').attr('src');
+            image = ($(this).find('.card-img-big').attr('src')) ? $(this).find('.card-img-big').attr('src') : $(this).find('img').attr('src');
             $('body').append(`      
                 <div class="modal modalMaded" rel="makeModal${index}">
                     <div class="modal-dialog">
@@ -150,28 +150,28 @@ function modalMaker() {
     }
     if (modalLength > 1) {
         $(".modalMaded").append('<ul class="modal-navigator"><li class="prev">prev</li><li class="next">next</li></ul>');
-        $(".modal-navigator .next").click(function(){
+        $(".modal-navigator .next").click(function () {
             $(".modal-navigator li").removeClass('disabled');
             $(this).parents(".modalMaded").removeClass('modal-show').next().addClass('modal-show');
             navitems = $(this).parents(".modalMaded").next('.modalMaded').next(".modalMaded")
-            if(!navitems.length){
+            if (!navitems.length) {
                 $(".modal-navigator .next").addClass('disabled')
             } else {
                 $(".modal-navigator .next").removeClass('disabled')
 
             }
         });
-        $(".modal-navigator .prev").click(function(){
+        $(".modal-navigator .prev").click(function () {
             $(".modal-navigator li").removeClass('disabled');
             $(this).parents(".modalMaded").removeClass('modal-show').prev().addClass('modal-show');
             navitems2 = $(this).parents(".modalMaded").prev('.modalMaded').prev(".modalMaded")
-            if(!navitems2.length){
+            if (!navitems2.length) {
                 $(".modal-navigator .prev").addClass('disabled')
             } else {
                 $(".modal-navigator .prev").removeClass('disabled')
 
             }
-        });        
+        });
     }
 }
 modalMaker();
@@ -190,29 +190,47 @@ function modalHandler() {
         var ModalMaded = $(".modalMaded[rel='" + elementName + "']");
         ModalMadedPrev = ModalMaded.prev('.modalMaded');
         ModalMadedNext = ModalMaded.next('.modalMaded');
-        if(!ModalMadedPrev.length){
+        if (!ModalMadedPrev.length) {
             $(".modal-navigator .prev").addClass('disabled');
         } else {
             $(".modal-navigator .prev").removeClass('disabled');
 
         }
-        if(!ModalMadedNext.length){
+        if (!ModalMadedNext.length) {
             $(".modal-navigator .next").addClass('disabled');
         } else {
             $(".modal-navigator .next").removeClass('disabled');
         }
     })
     $(".modal-close, .modal").click(function () {
-        $(".modal").removeClass('modal-show');
-        $('body').removeClass('overflow-hidden')
-        $(".modal-backdrop").fadeOut(function () {
-            $(".modal-backdrop").remove()
-        })
+        modalClose();
     });
+
     $('.modal-dialog, .modal-navigator li').click(function (e) { e.stopPropagation() })
-    $(".modalExpand").click(function(){
+    $(".modalExpand").click(function () {
         $('.modalMaded').find('.modal-dialog').toggleClass("modal-xl").find('.modalExpand').toggleClass('expanded');
 
     })
 }
 modalHandler()
+
+function modalClose() {
+    $(".modal").removeClass('modal-show');
+    $('body').removeClass('overflow-hidden')
+    $(".modal-backdrop").fadeOut(function () {
+        $(".modal-backdrop").remove()
+    })
+}
+
+
+$(document).on('keydown', function (event) {
+    if (event.key == "Escape") {
+        modalClose();
+    }
+    if (event.key == "ArrowRight") {
+        $(".modal-show .modal-navigator .next:not(.disabled)").trigger('click')
+    }
+    if (event.key == "ArrowLeft") {
+        $(".modal-show .modal-navigator .prev:not(.disabled)").trigger('click')
+    }
+});

@@ -685,21 +685,33 @@ Table of content
     .modal-navigator {
         color: #fff;
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         position: fixed;
         height: 100%;
-        width: 100%;
-        top: 0;
+        width: calc(100% - 60px);
         align-items: center;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
         li{
-            height: 50px;
-            width: 50px;
+            height: 35px;
+            width: 35px;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
             list-style: none;
             transition: all ease-in-out .3s;
+            text-indent: -9999%;
+            background-image: url('../images/arrow-icon.svg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center center;    
+            filter: invert(100) brightness(100);
+        }
+        .prev{
+            transform: rotate(180deg);
         }
         .disabled{
             pointer-events: none;
