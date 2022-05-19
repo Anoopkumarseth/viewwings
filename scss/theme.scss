@@ -9,6 +9,7 @@
     --box-shadow: 0px 4px 80px rgba(0, 0, 0, 0.1);
     --light-border: 1px solid rgba(0, 0, 0, 0.05);
     --overlay: linear-gradient(0deg, rgba(9, 27, 51, 0.8), rgba(9, 27, 51, 0.8));
+    --overlay-black:rgba(0, 0, 0, 0.8);
     --lead-size: 1.8rem;
     --content-size: 1rem;
     --h1-size: 4.8rem;
@@ -93,6 +94,9 @@
     border-top: 5px solid;
     border-bottom: 5px solid;
     border-color: var(--brand-color);
+    &::before{
+        background: var(--overlay-black) !important;
+    }
 }
 
 .choose-us {
