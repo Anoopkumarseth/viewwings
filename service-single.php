@@ -1,4 +1,4 @@
-<?php require_once 'header.php'?>
+<?php require_once 'inc/header.php'?>
     <section class="page-hero elements-section">
         <div class="img-wrap">
             <img src="images/page-hero.jpg" alt="" loading="lazy" class="hero-img">
@@ -145,6 +145,6 @@
 
 
 
-    <?php require_once 'footer.php'?>
+    <?php require_once 'inc/footer.php'?>
 
 

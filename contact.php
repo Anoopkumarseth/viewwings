@@ -1,4 +1,4 @@
-<?php require_once 'header.php'?>
+<?php require_once 'inc/header.php'?>
 
     <section class="page-hero elements-section">
         <div class="img-wrap">
@@ -88,72 +88,5 @@
 
 
 
-
-    <section class="section section-bg">
-        <div class="ctr">
-            <div class="section-header">
-                <h2 class="h2">Some FAQs</h2>
-            </div>
-            <div class="accordion">
-                <div class="accordion-item">
-                    <h3 class="accordion-header" tabindex=0>
-                        What Is the Cost
-                    </h3>
-                    <div class="accordion-content">
-                        <div class="accordion-body">
-                            Website Designing services in Delhi <strong>India with an immense</strong> assorted variety
-                            in its way of life. This assorted variety can likewise be seen in various fields of
-                            business. Each business requires distinctive advertising Website Designing services in Delhi
-                            India with an immense assorted variety in its way of life. This assorted variety can
-                            likewise be seen in various fields of business. Each business requires distinctive
-                            advertising
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h3 class="accordion-header" tabindex=0>
-                        Website Designing services in Delhi India with an immense way of life.
-                    </h3>
-                    <div class="accordion-content">
-                        <div class="accordion-body">
-                            There are over <strong>5 million apps available for download</strong> on the Google Play
-                            Store
-                            and iOS App Store
-                            combined. Thus, it’s not surprising that marketers struggle to differentiate their app from
-                            others and to generate higher click-throughs and conversions.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h3 class="accordion-header" tabindex=0>
-                        But by doing so you will repeat any action
-                    </h3>
-                    <div class="accordion-content">
-                        <div class="accordion-body">
-                            There are over <strong>5 million apps available for download</strong> on the Google Play
-                            Store
-                            and iOS App Store
-                            combined. Thus, it’s not surprising that marketers struggle to differentiate their app from
-                            others and to generate higher click-throughs and conversions.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h3 class="accordion-header" tabindex=0>
-                        Element. These classes control
-                    </h3>
-                    <div class="accordion-content">
-                        <div class="accordion-body">
-                            There are over <strong>5 million apps available for download</strong> on the Google Play
-                            Store
-                            and iOS App Store
-                            combined. Thus, it’s not surprising that marketers struggle to differentiate their app from
-                            others and to generate higher click-throughs and conversions.
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-    <?php require_once 'footer.php'?>
+    <?php require_once 'inc/faq.php';?>
+    <?php require_once 'inc/footer.php'?>

@@ -47,23 +47,23 @@
         <nav class="site-navbar">
             <div class="nav-ctr ctr">
                 <div class="site-logo">
-                    <a href="/"><img src="images/logo.svg" alt="Logo" class="site-logo"></a>
+                    <a href="index.php"><img src="images/logo.svg" alt="Logo" class="site-logo"></a>
                 </div>
                 <ul class="primary-menu primaryMenu">
-                    <li><a href="/index.php">Home</a></li>
+                    <li><a href="index.php">Home</a></li>
                     
                     <li class="menu-item-has-children">
-                        <a href="/services.html">Service</a>
+                        <a href="services.php">Service</a>
                         <ul class="sub-menu">
-                            <li><a href="/service-single.html">Designing</a></li>
-                            <li><a href="/service-single.html">Development</a></li>
-                            <li><a href="/service-single.html">Maintenance</a></li>
-                            <li><a href="/service-single.html">Digital Marketing</a></li>
+                            <li><a href="service-single.php">Designing</a></li>
+                            <li><a href="service-single.php">Development</a></li>
+                            <li><a href="service-single.php">Maintenance</a></li>
+                            <li><a href="service-single.php">Digital Marketing</a></li>
                             
                         </ul>
                     </li>
                     <li class="menu-item-has-children">
-                        <a href="work.html">Work</a>
+                        <a href="work.php">Work</a>
                         <ul class="sub-menu">
                             <li><a href="#">Educational</a></li>
                             <li><a href="#">E-commerce</a></li>
@@ -74,10 +74,10 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="/contact.html">Contact Us</a>
+                        <a href="contact.php">Contact Us</a>
                         
                     </li>
-                    <li><a href="/about-us.html">About us</a></li>
+                    <li><a href="about-us.php">About us</a></li>
                     <li class="quotes-btn button-modal" id="modal1" role="button">
                         <a href="#" >
                             Request Quote
