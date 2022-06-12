@@ -12,9 +12,7 @@
                         <div class="card dark-card mb-0">
                             <div class="card-body">
                                 <h1>Contact Us</h1>
-                                <p>It is a long established fact that a reader will be distracted by the readable
-                                    content of a page when looking at its layout. The point of using Lorem Ipsum is that
-                                    it has a more-or-less normal distribution of letters, as opposed</p>
+                                <p>Are you planing to get a mordern good looking feature full website? Get a quick estimat and get answer of your query. and in the otherhand you can ask us to do edit of your website and do a quility assurance of your website getting a QA testing is free for now! We are here to imporve your online precence. </p>
                             </div>
                         </div>
                     </div>
